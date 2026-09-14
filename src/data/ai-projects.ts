@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, CarFront, Rocket, ScanSearch } from "lucide-react";
+import { BrainCircuit, CarFront, Gamepad2, Rocket, ScanSearch } from "lucide-react";
 
 export interface AiProject {
   slug: string;
@@ -84,5 +84,22 @@ export const aiProjects: AiProject[] = [
     tech: ["Multi-Model", "RAG", "Agents"],
     icon: Rocket,
     accent: "#35e39b",
+  },
+  {
+    slug: "stem-controller",
+    index: "05",
+    title: "STEM Controller",
+    url: "https://stem-controller.vercel.app/",
+    tagline: "Gesture-controlled Snake game",
+    description:
+      "A classic Snake game you can steer with the arrow keys — or with your index finger tracked live through your webcam. Computer-vision gesture recognition turns body motion straight into gameplay.",
+    highlights: [
+      "Webcam finger tracking",
+      "Keyboard + gesture control",
+      "Live score & high score",
+    ],
+    tech: ["Gesture AI", "Hand Tracking", "Real-time"],
+    icon: Gamepad2,
+    accent: "#ff5c7a",
   },
 ];

@@ -67,7 +67,7 @@ export function AiProjects() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4 [perspective:1400px]">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 [perspective:1400px]">
           {aiProjects.map((project, i) => (
             <AiProjectCard key={project.slug} project={project} index={i} />
           ))}

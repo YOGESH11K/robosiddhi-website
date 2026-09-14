@@ -57,7 +57,7 @@ export function AiProjectCard({
       initial={reduced ? false : { opacity: 0, y: 44, scale: 0.96 }}
       whileInView={reduced ? undefined : { opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, ease: EASE, delay: (index % 4) * 0.14 }}
+      transition={{ duration: 0.7, ease: EASE, delay: (index % 3) * 0.14 }}
       className="h-full [transform-style:preserve-3d]"
     >
       <motion.a
