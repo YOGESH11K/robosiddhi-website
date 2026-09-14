@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectsExplorer } from "@/components/projects/projects-explorer";
+import { AiProjects } from "@/components/projects/ai-projects";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -36,6 +37,8 @@ export default function ProjectsPage() {
           <ProjectsExplorer />
         </Reveal>
       </section>
+
+      <AiProjects />
 
       <section className="border-t border-border bg-surface/30 py-16 text-center sm:py-20">
         <div className="container-x">
