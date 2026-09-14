@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, CarFront, Gamepad2, Rocket, ScanSearch } from "lucide-react";
+import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanSearch } from "lucide-react";
 
 export interface AiProject {
   slug: string;
@@ -101,5 +101,22 @@ export const aiProjects: AiProject[] = [
     tech: ["Gesture AI", "Hand Tracking", "Real-time"],
     icon: Gamepad2,
     accent: "#ff5c7a",
+  },
+  {
+    slug: "visionlab",
+    index: "06",
+    title: "VisionLab",
+    url: "https://visionlab-ai.vercel.app/",
+    tagline: "AI Electronics Laboratory",
+    description:
+      "Empire's AI electronics lab — points the camera at any component for instant AI identification, steers robots from live hand gestures, and ships an AI engineering copilot that writes Arduino & ESP32 code from plain English.",
+    highlights: [
+      "AI component scanner",
+      "Gesture-controlled robotics",
+      "Arduino & ESP32 code copilot",
+    ],
+    tech: ["Computer Vision", "MediaPipe", "OpenCV"],
+    icon: Eye,
+    accent: "#ff8a5c",
   },
 ];

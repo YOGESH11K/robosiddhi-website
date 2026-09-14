@@ -5,9 +5,10 @@ import { aiProjects } from "@/data/ai-projects";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ObjectStage } from "@/components/three/object-stage";
+import { HudBrackets, HudRadar } from "@/components/ui/hud";
 import { AiProjectCard } from "./ai-project-card";
 
-const models = ["eNet-B0", "AffectNet", "MediaPipe", "COCO-SSD"];
+const models = ["eNet-B0", "AffectNet", "MediaPipe", "OpenCV", "COCO-SSD"];
 
 /** Dedicated AI section inside the Projects area — 3D, live-lab themed. */
 export function AiProjects() {
@@ -31,6 +32,38 @@ export function AiProjects() {
       <div aria-hidden className="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -right-24 bottom-12 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
 
+      {/* holographic scan beam sweeping the whole lab */}
+      <span aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <span
+          className="animate-scan-tall absolute inset-x-0 top-0 h-24"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, rgba(45,226,255,0.07), transparent)",
+          }}
+        />
+      </span>
+
+      {/* receding holographic grid floor */}
+      <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-56 overflow-hidden">
+        <span
+          className="holofield absolute inset-x-[-20%] bottom-0 h-72 opacity-70"
+          style={{
+            transform: "perspective(560px) rotateX(58deg)",
+            transformOrigin: "bottom",
+            maskImage:
+              "linear-gradient(to top, transparent, black 55%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to top, transparent, black 55%, transparent)",
+          }}
+        />
+      </span>
+
+      {/* HUD corner frame around the lab */}
+      <HudBrackets
+        className="inset-4 opacity-50 sm:inset-8"
+        style={{ color: "rgba(45,226,255,0.85)" }}
+      />
+
       <div className="relative container-x py-16 sm:py-24">
         <SectionHeading
           align="left"
@@ -41,7 +74,7 @@ export function AiProjects() {
               <span className="text-gradient"> LIVE MACHINE VISION.</span>
             </>
           }
-          description="Three browser-based AI experiments built in the RoboSiddhi lab — real neural networks running inference live in your browser."
+          description="Six browser-based AI builds from the RoboSiddhi lab — real neural networks and edge-AI vision systems running live in your browser."
         />
 
         {/* HUD status strip */}
@@ -64,6 +97,7 @@ export function AiProjects() {
               <Cpu className="h-3.5 w-3.5" aria-hidden />
               on-device inference
             </span>
+            <HudRadar />
           </div>
         </Reveal>
 

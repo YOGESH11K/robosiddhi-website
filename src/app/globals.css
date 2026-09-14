@@ -155,6 +155,69 @@ body {
   &:hover::after { opacity: 1; }
 }
 
+/* ── Holo-lab effects ─────────────────────────────────────────── */
+
+@utility scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    oklch(1 0 0 / 0.03) 0px,
+    oklch(1 0 0 / 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+@utility holofield {
+  background-image:
+    linear-gradient(oklch(0.75 0.14 210 / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.75 0.14 210 / 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: grid-rise 2.2s linear infinite;
+}
+
+/* vertical scanline sweep — element must fill its parent's travel area */
+@keyframes scan-y {
+  0% { transform: translateY(-180%); opacity: 0; }
+  8% { opacity: 0.55; }
+  85% { opacity: 0.55; }
+  100% { transform: translateY(760%); opacity: 0; }
+}
+
+/* tall variant for sweeping whole sections */
+@keyframes scan-tall {
+  0% { transform: translateY(-220%); opacity: 0; }
+  10% { opacity: 0.45; }
+  90% { opacity: 0.45; }
+  100% { transform: translateY(2200%); opacity: 0; }
+}
+
+@keyframes grid-rise {
+  from { background-position-y: 0px; }
+  to { background-position-y: 44px; }
+}
+
+@keyframes radar-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes holo-flicker {
+  0%, 100% { opacity: 1; }
+  90% { opacity: 0.78; }
+  93% { opacity: 1; }
+}
+
+@keyframes holo-shimmer {
+  0% { transform: translateX(-150%) skewX(-16deg); }
+  100% { transform: translateX(280%) skewX(-16deg); }
+}
+
+.animate-scan-y { animation: scan-y 3.6s linear infinite; }
+.animate-scan-tall { animation: scan-tall 11s linear infinite; }
+.animate-grid-rise { animation: grid-rise 2.2s linear infinite; }
+.animate-radar { animation: radar-spin 4s linear infinite; }
+.animate-holo-flicker { animation: holo-flicker 5.5s linear infinite; }
+.animate-holo-shimmer { animation: holo-shimmer 4.5s linear infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

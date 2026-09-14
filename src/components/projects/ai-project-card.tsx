@@ -10,6 +10,7 @@ import {
 import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
 import type { AiProject } from "@/data/ai-projects";
 import { EASE } from "@/lib/motion";
+import { HudBrackets } from "@/components/ui/hud";
 
 const TILT = 9;
 
@@ -60,6 +61,14 @@ export function AiProjectCard({
       transition={{ duration: 0.7, ease: EASE, delay: (index % 3) * 0.14 }}
       className="h-full [transform-style:preserve-3d]"
     >
+      {/* floor projection glow — bleeds out from under the card on hover */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-10 -bottom-5 h-12 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-70"
+        style={{
+          background: `radial-gradient(closest-side, ${project.accent}5e, transparent)`,
+        }}
+      />
       <motion.a
         href={project.url}
         target="_blank"
@@ -87,6 +96,40 @@ export function AiProjectCard({
           aria-hidden
           className="pointer-events-none absolute inset-x-6 top-0 z-10 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-40"
         />
+        {/* CRT scanline texture over the glass */}
+        <span
+          aria-hidden
+          className="scanlines pointer-events-none absolute inset-0 z-10 opacity-20 transition-opacity duration-500 group-hover:opacity-40"
+        />
+        {/* holographic shimmer sweep on hover */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-10 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+          <span
+            className="animate-holo-shimmer absolute top-0 h-full w-1/3"
+            style={{
+              background: `linear-gradient(105deg, transparent, ${project.accent}21, transparent)`,
+            }}
+          />
+        </span>
+        {/* vertical scan beam on hover */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-10 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+          <span
+            className="animate-scan-y absolute inset-x-0 top-0 h-[22%]"
+            style={{
+              background: `linear-gradient(to bottom, transparent, ${project.accent}3d, transparent)`,
+            }}
+          />
+        </span>
+        {/* HUD targeting brackets */}
+        <HudBrackets
+          className="inset-3 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          style={{ color: project.accent }}
+        />
         {/* glass base + lab texture */}
         <span aria-hidden className="absolute inset-0 glass rounded-2xl" />
         <span
@@ -99,7 +142,7 @@ export function AiProjectCard({
           className="pointer-events-none absolute -right-7 -top-7 z-10 opacity-[0.08] transition-opacity duration-500 group-hover:opacity-[0.16]"
           style={{ color: project.accent }}
         >
-          <Icon className="h-28 w-28" />
+          <Icon className="h-28 w-28 animate-holo-flicker" />
         </span>
 
         <div className="relative z-20 flex h-full flex-col p-6 sm:p-7">
