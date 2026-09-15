@@ -17,8 +17,8 @@ export const siteConfig = {
 
   // TODO_CONFIG: Replace with verified contact details
   contact: {
-    email: "hello@robosiddhi.example.com", // TODO_CONFIG
-    phone: "+91 XXXXX XXXXX", // TODO_CONFIG
+    email: "admin@robosiddhi.com",
+    phone: "+91 93514 69616",
     address: "Jaipur, Rajasthan, India", // TODO_CONFIG
     hours: "Mon – Sat · 10:00 AM – 7:00 PM",
   },
