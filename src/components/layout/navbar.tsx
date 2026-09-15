@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,19 +29,14 @@ function Logo() {
       aria-label="RoboSiddhi home"
       className="group flex items-center gap-2.5"
     >
-      <span className="relative grid h-9 w-9 place-items-center rounded-xl border border-primary/30 bg-primary/10 transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-glow-primary">
-        <svg viewBox="0 0 24 24" className="h-5 w-5 text-primary" aria-hidden>
-          <rect x="4" y="7" width="16" height="12" rx="3" fill="none" stroke="currentColor" strokeWidth="1.8" />
-          <circle cx="9.5" cy="13" r="1.6" fill="currentColor" />
-          <circle cx="14.5" cy="13" r="1.6" fill="currentColor" />
-          <path d="M12 7V3.8M12 3.8h3" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          <circle cx="15.8" cy="3.8" r="1.4" fill="currentColor" />
-        </svg>
-      </span>
-      <span className="font-display text-[17px] font-bold leading-none tracking-tight">
-        ROBO
-        <span className="text-gradient">SIDDHI</span>
-      </span>
+      <Image
+        src="/logos/robosiddhi-logo.png"
+        alt="RoboSiddhi"
+        width={1438}
+        height={756}
+        priority
+        className="h-[44px] w-auto transition-opacity duration-300 group-hover:opacity-90"
+      />
     </Link>
   );
 }

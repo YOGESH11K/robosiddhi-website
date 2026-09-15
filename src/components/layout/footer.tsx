@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { SocialIcon } from "@/components/icons/social-icon";
@@ -45,9 +46,13 @@ export function Footer() {
           {/* Brand block */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3" aria-label="RoboSiddhi home">
-              <span className="font-display text-xl font-bold tracking-tight">
-                ROBO<span className="text-gradient">SIDDHI</span>
-              </span>
+              <Image
+                src="/logos/robosiddhi-logo.png"
+                alt="RoboSiddhi"
+                width={1438}
+                height={756}
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="max-w-sm leading-relaxed text-muted">
               {siteConfig.description}
