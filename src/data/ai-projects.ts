@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanSearch } from "lucide-react";
+import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanSearch, ShoppingCart } from "lucide-react";
 
 export interface AiProject {
   slug: string;
@@ -118,5 +118,22 @@ export const aiProjects: AiProject[] = [
     tech: ["Computer Vision", "AI", "Machine Learning", "Real-time", "Vision AI"],
     icon: Eye,
     accent: "#ff8a5c",
+  },
+  {
+    slug: "stem-shop",
+    index: "07",
+    title: "Stem Shop",
+    url: "https://robosiddhi.shop/",
+    tagline: "Robotics & STEM kits store",
+    description:
+      "The RoboSiddhi storefront for robotics kits, STEM education tools, 3D printers, drones and electronics parts — everything needed to build, solder and code, shipped across India.",
+    highlights: [
+      "Robotics & STEM kits",
+      "3D printers, drones & electronics",
+      "Free shipping across India",
+    ],
+    tech: ["Robotics", "STEM", "Electronics", "3D Printing", "Drones"],
+    icon: ShoppingCart,
+    accent: "#ffc94d",
   },
 ];

@@ -74,7 +74,7 @@ export function AiProjects() {
               <span className="text-gradient"> LIVE MACHINE VISION.</span>
             </>
           }
-          description="Six browser-based AI builds from the RoboSiddhi lab — real neural networks and edge-AI vision systems running live in your browser."
+          description="Seven browser-based AI builds from the RoboSiddhi lab — real neural networks, edge-AI vision systems and the kits behind them, running live in your browser and store."
         />
 
         {/* HUD status strip */}
