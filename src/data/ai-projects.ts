@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanSearch, ShoppingCart } from "lucide-react";
+import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanFace, ScanSearch, ShoppingCart } from "lucide-react";
 
 export interface AiProject {
   slug: string;
@@ -135,5 +135,22 @@ export const aiProjects: AiProject[] = [
     tech: ["Robotics", "STEM", "Electronics", "3D Printing", "Drones"],
     icon: ShoppingCart,
     accent: "#ffc94d",
+  },
+  {
+    slug: "stem-face-mask",
+    index: "08",
+    title: "STEM Face Mask",
+    url: "https://stemfacemask.vercel.app/",
+    tagline: "Real-time face mask detection",
+    description:
+      "A real-time face mask detection system that uses your webcam to instantly identify whether a person is wearing a mask or not — classifying masked and unmasked faces live in the browser with no server uploads.",
+    highlights: [
+      "Real-time webcam detection",
+      "Masked vs unmasked classification",
+      "100% on-device inference",
+    ],
+    tech: ["Computer Vision", "TensorFlow.js", "Real-time"],
+    icon: ScanFace,
+    accent: "#00d4aa",
   },
 ];
