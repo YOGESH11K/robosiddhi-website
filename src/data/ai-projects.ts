@@ -5,6 +5,7 @@ import {
   Eye,
   Fingerprint,
   Gamepad2,
+  HandMetal,
   Rocket,
   ScanFace,
   ScanSearch,
@@ -25,6 +26,8 @@ export interface AiProject {
   accent: string;
   /** Renders the project as the full-width flagship spotlight card. */
   featured?: boolean;
+  /** Renders the project as the full-width closing spotlight card. */
+  spotlight?: boolean;
 }
 
 /** Live browser-based AI builds from the RoboSiddhi lab. Add new projects here. */
@@ -182,5 +185,24 @@ export const aiProjects: AiProject[] = [
     tech: ["Computer Vision", "TensorFlow.js", "Real-time"],
     icon: ScanFace,
     accent: "#00d4aa",
+  },
+  {
+    slug: "stem-sign-language",
+    index: "09",
+    title: "STEM Sign Language",
+    url: "https://stem-signlanguage.vercel.app/",
+    tagline: "Real-time ASL gesture recognition",
+    description:
+      "A real-time American Sign Language recognition system that reads hand gestures straight from your webcam and translates them into letters and words — live in the browser with zero uploads. Built as a new frontier for accessible AI from the RoboSiddhi lab.",
+    highlights: [
+      "Real-time webcam hand tracking",
+      "Live ASL letter recognition",
+      "100% on-device inference",
+      "Instant in-browser translation",
+    ],
+    tech: ["MediaPipe Hands", "Gesture AI", "TensorFlow.js", "Real-time"],
+    icon: HandMetal,
+    accent: "#e879f9",
+    spotlight: true,
   },
 ];
