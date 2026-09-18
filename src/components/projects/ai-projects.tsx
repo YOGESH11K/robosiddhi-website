@@ -7,8 +7,12 @@ import { Reveal } from "@/components/ui/reveal";
 import { ObjectStage } from "@/components/three/object-stage";
 import { HudBrackets, HudRadar } from "@/components/ui/hud";
 import { AiProjectCard } from "./ai-project-card";
+import { FeaturedAiCard } from "./featured-ai-card";
 
 const models = ["eNet-B0", "AffectNet", "MediaPipe", "OpenCV", "COCO-SSD"];
+
+const featured = aiProjects.find((project) => project.featured) ?? null;
+const gallery = aiProjects.filter((project) => !project.featured);
 
 /** Dedicated AI section inside the Projects area — 3D, live-lab themed. */
 export function AiProjects() {
@@ -74,7 +78,7 @@ export function AiProjects() {
               <span className="text-gradient"> LIVE MACHINE VISION.</span>
             </>
           }
-          description="Seven browser-based AI builds from the RoboSiddhi lab — real neural networks, edge-AI vision systems and the kits behind them, running live in your browser and store."
+          description="Nine live, browser-based AI builds from the RoboSiddhi lab — real neural networks, edge-AI vision systems and the kits behind them, running live in your browser and store."
         />
 
         {/* HUD status strip */}
@@ -101,8 +105,14 @@ export function AiProjects() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 [perspective:1400px]">
-          {aiProjects.map((project, i) => (
+        {featured && (
+          <div className="mt-12">
+            <FeaturedAiCard project={featured} />
+          </div>
+        )}
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 [perspective:1400px]">
+          {gallery.map((project, i) => (
             <AiProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>

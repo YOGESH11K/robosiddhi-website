@@ -211,6 +211,14 @@ body {
   100% { transform: translateX(280%) skewX(-16deg); }
 }
 
+/* rotating gradient so a conic ring can sweep around a card border */
+@keyframes gradient-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.animate-gradient-rotate { animation: gradient-rotate 9s linear infinite; }
+
 .animate-scan-y { animation: scan-y 3.6s linear infinite; }
 .animate-scan-tall { animation: scan-tall 11s linear infinite; }
 .animate-grid-rise { animation: grid-rise 2.2s linear infinite; }

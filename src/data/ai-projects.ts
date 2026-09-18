@@ -1,5 +1,15 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, CarFront, Eye, Gamepad2, Rocket, ScanFace, ScanSearch, ShoppingCart } from "lucide-react";
+import {
+  BrainCircuit,
+  CarFront,
+  Eye,
+  Fingerprint,
+  Gamepad2,
+  Rocket,
+  ScanFace,
+  ScanSearch,
+  ShoppingCart,
+} from "lucide-react";
 
 export interface AiProject {
   slug: string;
@@ -13,10 +23,30 @@ export interface AiProject {
   icon: LucideIcon;
   /** Accent hex — matches the global color palette. */
   accent: string;
+  /** Renders the project as the full-width flagship spotlight card. */
+  featured?: boolean;
 }
 
 /** Live browser-based AI builds from the RoboSiddhi lab. Add new projects here. */
 export const aiProjects: AiProject[] = [
+  {
+    slug: "stem-attendance",
+    index: "00",
+    title: "STEM Attendance",
+    url: "https://stem-attendance-six.vercel.app/",
+    tagline: "AI face-recognition attendance",
+    description:
+      "The flagship attendance system from the RoboSiddhi lab. A face-recognition web app that signs students in with a single glance — no cards, no manual rolls. Built by Yash, it identifies faces instantly and marks attendance automatically from the browser, making every check-in contactless and instant.",
+    highlights: [
+      "Face-recognized check-in",
+      "Zero-touch, instant sign-in",
+      "Built by Yash in the RS lab",
+    ],
+    tech: ["Face Recognition", "Computer Vision", "Web App"],
+    icon: Fingerprint,
+    accent: "#ffd166",
+    featured: true,
+  },
   {
     slug: "stem-emotion",
     index: "01",
