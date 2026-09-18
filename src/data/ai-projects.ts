@@ -26,8 +26,6 @@ export interface AiProject {
   accent: string;
   /** Renders the project as the full-width flagship spotlight card. */
   featured?: boolean;
-  /** Renders the project as the full-width closing spotlight card. */
-  spotlight?: boolean;
 }
 
 /** Live browser-based AI builds from the RoboSiddhi lab. Add new projects here. */
@@ -203,6 +201,5 @@ export const aiProjects: AiProject[] = [
     tech: ["MediaPipe Hands", "Gesture AI", "TensorFlow.js", "Real-time"],
     icon: HandMetal,
     accent: "#e879f9",
-    spotlight: true,
   },
 ];

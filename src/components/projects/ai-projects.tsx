@@ -8,15 +8,11 @@ import { ObjectStage } from "@/components/three/object-stage";
 import { HudBrackets, HudRadar } from "@/components/ui/hud";
 import { AiProjectCard } from "./ai-project-card";
 import { FeaturedAiCard } from "./featured-ai-card";
-import { SpotlightAiCard } from "./spotlight-ai-card";
 
 const models = ["eNet-B0", "AffectNet", "MediaPipe", "OpenCV", "COCO-SSD"];
 
 const featured = aiProjects.find((project) => project.featured) ?? null;
-const gallery = aiProjects.filter(
-  (project) => !project.featured && !project.spotlight
-);
-const spotlight = aiProjects.find((project) => project.spotlight) ?? null;
+const gallery = aiProjects.filter((project) => !project.featured);
 
 /** Dedicated AI section inside the Projects area — 3D, live-lab themed. */
 export function AiProjects() {
@@ -120,12 +116,6 @@ export function AiProjects() {
             <AiProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>
-
-        {spotlight && (
-          <div className="mt-6">
-            <SpotlightAiCard project={spotlight} />
-          </div>
-        )}
       </div>
     </section>
   );
